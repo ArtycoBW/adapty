@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronRight } from "lucide-react";
+import { withBasePath } from "@/lib/publicPath";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
@@ -17,15 +18,6 @@ const fadeUp: Variants = {
     y: 0,
     transition: { delay: 0.08 * i, duration: 0.9, ease: easeOut },
   }),
-};
-
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.05, ease: easeOut, delay: 0.18 },
-  },
 };
 
 const fadeInLogos: Variants = {
@@ -115,7 +107,7 @@ export function HeroSection() {
             <div className="rounded-md bg-white/55 border border-black/5 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.55)] p-6 sm:p-7 absolute right-20 top-27">
               <div className="rounded-md bg-white relative">
                 <Image
-                  src="/adapty-overview@2x.webp"
+                  src={withBasePath("/adapty-overview@2x.webp")}
                   alt="Overview dashboard"
                   width={1220}
                   height={1060}
@@ -132,7 +124,7 @@ export function HeroSection() {
               >
                 <div className="relative overflow-hidden rounded-[34px]">
                   <Image
-                    src="/adapty-paywall-demo-preview@2x.webp"
+                    src={withBasePath("/adapty-paywall-demo-preview@2x.webp")}
                     alt="Paywall preview"
                     width={650}
                     height={600}
@@ -150,29 +142,37 @@ export function HeroSection() {
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-80">
             <img
-              src="/logo-feeld-gray.svg"
+              src={withBasePath("/logo-feeld-gray.svg")}
               alt="FEELD"
               className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
             />
             <img
-              src="/logo-bumble-gray.svg"
+              src={withBasePath("/logo-bumble-gray.svg")}
               alt="bumble"
               className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
             />
-            <img src="/weewoo.svg" alt="weewoo" className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70" />
             <img
-              src="/AppNation.webp"
+              src={withBasePath("/weewoo.svg")}
+              alt="weewoo"
+              className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
+            />
+            <img
+              src={withBasePath("/AppNation.webp")}
               alt="AppNation"
               className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
             />
-            <img src="/almus.svg" alt="almus" className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70" />
             <img
-              src="/logo-text-impala-studios-gray.svg"
+              src={withBasePath("/almus.svg")}
+              alt="almus"
+              className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
+            />
+            <img
+              src={withBasePath("/logo-text-impala-studios-gray.svg")}
               alt="impala studios"
               className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
             />
             <img
-              src="/logo-hubx-gray.svg"
+              src={withBasePath("/logo-hubx-gray.svg")}
               alt="HUBX"
               className="h-6 w-auto grayscale brightness-75 contrast-125 opacity-70"
             />

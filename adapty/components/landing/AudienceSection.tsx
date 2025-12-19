@@ -1,10 +1,10 @@
- 
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { withBasePath } from "@/lib/publicPath";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
@@ -45,7 +45,7 @@ export function AudienceSection() {
           >
             <div className="relative mx-auto h-32.5 w-full max-w-120">
               <Image
-                src="/audience-dev.webp"
+                src={withBasePath("/audience-dev.webp")}
                 alt="Для разработчиков"
                 fill
                 className="object-contain"
@@ -85,9 +85,10 @@ export function AudienceSection() {
           >
             <div className="relative mx-auto h-32.5 w-full max-w-100">
               <Image
-                src="/audience-owners.webp"
+                src={withBasePath("/audience-owners.webp")}
                 alt="Для владельцев"
                 fill
+                className="object-contain"
               />
             </div>
 
@@ -121,9 +122,10 @@ export function AudienceSection() {
           >
             <div className="relative mx-auto h-32.5 w-full max-w-100">
               <Image
-                src="/audience-marketing.webp"
+                src={withBasePath("/audience-marketing.webp")}
                 alt="Для маркетологов"
                 fill
+                className="object-contain"
               />
             </div>
 
