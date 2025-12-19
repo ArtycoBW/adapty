@@ -1,8 +1,9 @@
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = rawBasePath === "/" ? "" : rawBasePath.replace(/\/$/, "");
 
-export const withBasePath = (src: string) => {
-  if (!src) return src;
-  if (src.startsWith("http")) return src;
-  if (src.startsWith(basePath)) return src;
-  return `${basePath}${src.startsWith("/") ? src : `/${src}`}`;
-};
+export function withBasePath(path: string) {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  if (!basePath) return p;
+  if (p === basePath || p.startsWith(`${basePath}/`)) return p;
+  return `${basePath}${p}`;
+}

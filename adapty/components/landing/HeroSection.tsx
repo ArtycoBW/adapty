@@ -104,10 +104,10 @@ export function HeroSection() {
           </div>
 
           <div>
-            <div className="rounded-md bg-white/55 border border-black/5 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.55)] p-6 sm:p-7 absolute right-20 top-27">
+            <div className="rounded-md bg-white/55 border border-black/5 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.55)] p-6 sm:p-7 absolute right-[2%] top-[12%]">
               <div className="rounded-md bg-white relative">
                 <Image
-                  src={withBasePath("/adapty-overview@2x.webp")}
+                  src={withBasePath("/adapty-overview.webp")}
                   alt="Overview dashboard"
                   width={1220}
                   height={1060}
@@ -120,11 +120,11 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.1, ease: easeOut, delay: 0.32 }}
-                className="pointer-events-none absolute right-175 top-20 w-52.5 sm:w-57.5 lg:w-50"
+                className="pointer-events-none absolute right-[95%] top-[15%] w-52.5 sm:w-57.5 lg:w-50"
               >
                 <div className="relative overflow-hidden rounded-[34px]">
                   <Image
-                    src={withBasePath("/adapty-paywall-demo-preview@2x.webp")}
+                    src={withBasePath("/adapty-paywall-demo-preview.webp")}
                     alt="Paywall preview"
                     width={650}
                     height={600}

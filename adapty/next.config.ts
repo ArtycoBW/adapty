@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
-const repo = "adapty";
-const basePath = process.env.NODE_ENV === "production" ? `/${repo}` : "";
+const repoName = "adapty";
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  images: { unoptimized: true },
+  trailingSlash: true,
   basePath,
   assetPrefix: basePath,
+  images: { unoptimized: true },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
