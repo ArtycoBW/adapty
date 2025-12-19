@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -40,8 +41,23 @@ function NavLink({
 }
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-[#f7f3f1]/90 backdrop-blur hover:bg-white ease-linear duration-500">
+    <header
+      className={[
+        "sticky top-0 z-50 backdrop-blur transition-colors duration-500 ease-linear",
+        isScrolled ? "bg-white" : "bg-[#f7f3f1]/90",
+        "hover:bg-white",
+      ].join(" ")}
+    >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">

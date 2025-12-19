@@ -39,7 +39,7 @@ const fadeInLogos: Variants = {
 
 export function HeroSection() {
   return (
-    <section className="bg-[#f7f3f1]">
+    <section className="bg-[#f7f3f1] h-[calc(100vh-80px)]">
       <div className="mx-auto max-w-6xl px-6 lg:px-8 pt-12 lg:pt-16 pb-10">
         <div className="grid items-center gap-14 lg:grid-cols-[520px_1fr]">
           <div>
